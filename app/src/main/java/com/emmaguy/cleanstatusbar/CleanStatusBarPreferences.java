@@ -64,4 +64,8 @@ public class CleanStatusBarPreferences {
     public boolean isLightModeEnabled() {
         return mSharedPreferences.getBoolean(mResources.getString(R.string.key_m_light_status_bar), false);
     }
+
+    public boolean showBluetoothIcon() {
+        return mSharedPreferences.getBoolean(mResources.getString(R.string.key_bluetooth), false);
+    }
 }

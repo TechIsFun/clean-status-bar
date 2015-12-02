@@ -31,4 +31,6 @@ public interface StatusBarConfig {
     int getWifiPaddingOffset();
 
     void setBatteryViewDimensions(View v);
+
+    Drawable getBluetoothDrawable();
 }

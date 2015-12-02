@@ -99,6 +99,11 @@ public class DefaultStatusBarConfig implements StatusBarConfig {
     }
 
     @Override
+    public Drawable getBluetoothDrawable() {
+        return getTintedDrawable(mResources, R.drawable.stat_sys_data_bluetooth, getForegroundColour());
+    }
+
+    @Override
     public int getRightPadding() {
         return dpToPx(6);
     }

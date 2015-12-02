@@ -33,6 +33,10 @@
         android:key="@string/key_signal_wifi"
         android:title="@string/wifi_icon" />
 
+    <SwitchPreference
+        android:key="@string/key_bluetooth"
+        android:title="@string/bluetooth" />
+
     <ListPreference
         android:defaultValue="-1"
         android:entries="@array/network_icon_entries"

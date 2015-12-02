@@ -18,6 +18,12 @@
         tools:src="@drawable/stat_sys_wifi_signal_4_fully" />
 
     <ImageView
+        android:id="@+id/status_bar_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stat_sys_data_bluetooth" />
+
+    <ImageView
         android:id="@+id/status_bar_3g"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

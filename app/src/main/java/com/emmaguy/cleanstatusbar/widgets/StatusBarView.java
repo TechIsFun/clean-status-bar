@@ -27,6 +27,7 @@ public class StatusBarView extends LinearLayout {
     private final ImageView mWifiView;
     private final ImageView mGPSView;
     private final TextView mTimeTextView;
+    private final ImageView mBluetoothView;
     private final BatteryMeterView mBatteryView;
 
     public StatusBarView(Context context) {
@@ -50,9 +51,11 @@ public class StatusBarView extends LinearLayout {
         m3gView = (ImageView) findViewById(R.id.status_bar_3g);
         mWifiView = (ImageView) findViewById(R.id.status_bar_wifi);
         mGPSView = (ImageView) findViewById(R.id.status_bar_gps);
+        mBluetoothView = (ImageView) findViewById(R.id.status_bar_bluetooth);
+
     }
 
-    public void setStatusBarConfig(StatusBarConfig statusBarConfig, int backgroundColour, String clockTime, boolean shouldShowWifi, int icon3G, boolean shouldShowGps) {
+    public void setStatusBarConfig(StatusBarConfig statusBarConfig, int backgroundColour, String clockTime, boolean shouldShowWifi, int icon3G, boolean shouldShowGps, boolean shouldShowBluetooth) {
         setPadding(0, 0, statusBarConfig.getRightPadding(), 0);
         statusBarConfig.setBatteryViewDimensions(mBatteryView);
 
@@ -102,6 +105,14 @@ public class StatusBarView extends LinearLayout {
             setBackgroundAndKeepPadding(this, layerDrawable);
         } else {
             setBackgroundColor(backgroundColour);
+        }
+
+        if (shouldShowBluetooth) {
+            mBluetoothView.setVisibility(View.VISIBLE);
+            mBluetoothView.setPadding(0, dpToPx(5), 0, dpToPx(5));
+            mBluetoothView.setImageDrawable(statusBarConfig.getBluetoothDrawable());
+        } else {
+            mBluetoothView.setVisibility(View.GONE);
         }
     }
 
